@@ -1,51 +1,56 @@
 #contact {
   background-color: #f9f9f9;
+  clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+  margin-top: -5vw;
+  padding: 10rem 0;
+  text-align: center;
   color: $dark-blue;
 
-  // Tambahkan garis pembatas atas
-  clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
-  margin-top: -5vw;
-  padding: 15rem 0 10rem 0;
-
-  @include respond(tab-land) {
-    padding: 10rem 0;
-    clip-path: none;
-    -webkit-clip-path: none;
-    margin-top: 0;
+  .section-title {
+    margin-bottom: 4rem;
+    font-size: 3rem;
   }
 
-  .contact-wrapper {
-    margin-top: 3.2rem;
-    padding: 0 2rem;
-    backface-visibility: hidden;
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
 
-    .contact-wrapper__text i {
-      margin-right: 0.8rem;
+  .contact-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    text-align: center;
+
+    i {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
     }
 
-    &__text {
-      margin-bottom: 2.5rem;
-    }
-
-    &__text,
-    a {
-      font-size: 2.4rem;
-
-      @include respond(phone) {
-        font-size: 2rem;
-      }
+    h3 {
+      margin: 0.5rem 0;
+      font-size: 1.4rem;
     }
 
     a {
       color: $primary-color;
-      text-decoration: underline;
-      transition: all 0.3s ease;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 0.95rem;
 
       &:hover {
-        color: darken($primary-color, 10%);
-        text-decoration: none;
+        text-decoration: underline;
       }
+    }
+
+    &:hover {
+      transform: translateY(-5px);
     }
   }
 }
