@@ -1,6 +1,11 @@
 #contact {
-  background-color: #f9f9f9;
-  clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+  background-color: #ffffff; // background putih
+  clip-path: polygon(
+    0 5vw,
+    100% 0,
+    100% 100%,
+    0 100%
+  ); // garis miring tetap ada
   margin-top: -5vw;
   padding: 10rem 0;
   text-align: center;
@@ -9,48 +14,62 @@
   .section-title {
     margin-bottom: 4rem;
     font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $dark-blue;
   }
 
   .contact-cards {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     flex-wrap: wrap;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .contact-card {
-    background: #fff;
+    background: rgba(0, 0, 0, 0.05);
     padding: 2rem;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-    text-align: center;
-
-    i {
-      font-size: 2.5rem;
-      color: $primary-color;
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      margin: 0.5rem 0;
-      font-size: 1.4rem;
-    }
-
-    a {
-      color: $primary-color;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 0.95rem;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+    font-size: 2.8rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
 
     &:hover {
-      transform: translateY(-5px);
+      background: rgba(0, 0, 0, 0.15);
+      color: darken($primary-color, 20%);
+      transform: scale(1.15);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 6rem 1rem;
+
+    .section-title {
+      font-size: 2.4rem;
+    }
+
+    .contact-cards {
+      max-width: 320px;
+      gap: 2rem;
+    }
+
+    .contact-card {
+      width: 70px;
+      height: 70px;
+      font-size: 2rem;
+      padding: 1.5rem;
     }
   }
 }
