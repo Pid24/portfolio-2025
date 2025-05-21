@@ -6,49 +6,27 @@
 
   .back-to-top {
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
 
     i {
       color: $white-color;
-      transition: transform 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
 
-      &:hover {
-        transform: translateY(-4px);
+      &:hover,
+      &:focus {
+        transform: translateY(-6px);
         color: $primary-color;
+        outline: none;
       }
     }
   }
 
   .footer__text {
     font-size: 1.4rem;
-    margin-bottom: 1.2rem;
 
-    a {
-      color: $primary-color;
-      font-weight: bold;
-      text-decoration: underline;
-
-      &:hover {
-        text-decoration: none;
-        color: lighten($primary-color, 10%);
-      }
-    }
-  }
-
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-
-    a {
-      color: $white-color;
-      font-size: 2rem;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.2);
-        color: $primary-color;
-      }
+    strong {
+      font-weight: 700;
     }
   }
 }
